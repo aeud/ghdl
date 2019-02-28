@@ -97,3 +97,11 @@ func DownloadFileFromRef(ref string) ([]byte, error) {
 	}
 	return DownloadFile(owner, repo, path)
 }
+
+func DownloadFileFromRefForce(ref string) []byte {
+	bs, err := DownloadFileFromRef(ref)
+	if err != nil {
+		panic(err)
+	}
+	return bs
+}
